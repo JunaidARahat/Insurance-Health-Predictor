@@ -4,7 +4,7 @@ gunicorn
 scikit-learn
 pandas
 PyYAML
-evidently
+evidently==0.2.8
 dill
 matplotlib
 catboost
