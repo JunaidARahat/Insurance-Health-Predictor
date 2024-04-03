@@ -1,7 +1,7 @@
 {
       "data_drift": {
             "name": "data_drift",
-            "datetime": "2024-04-03 15:49:40.930960",
+            "datetime": "2024-04-03 16:20:18.250257",
             "data": {
                   "utility_columns": {
                         "date": null,
@@ -363,5 +363,5 @@
                   }
             }
       },
-      "timestamp": "2024-04-03 15:49:40.930960"
+      "timestamp": "2024-04-03 16:20:18.250257"
 }
