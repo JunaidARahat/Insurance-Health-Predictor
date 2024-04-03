@@ -1,2 +1,5 @@
 best_model:
-  model_path: D:\Insurance Health Predictor 2024\Insurance-Health-Predictor\insurance\artifact\model_trainer\2024-04-03-16-20-16\trained_model\model.pkl
+  model_path: D:\Insurance Health Predictor 2024\Insurance-Health-Predictor\insurance\artifact\model_trainer\2024-04-03-16-53-47\trained_model\model.pkl
+history:
+  2024-04-03-16-53-47:
+    model_path: D:\Insurance Health Predictor 2024\Insurance-Health-Predictor\insurance\artifact\model_trainer\2024-04-03-16-20-16\trained_model\model.pkl
