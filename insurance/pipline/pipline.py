@@ -10,9 +10,11 @@ from typing import List
 from multiprocessing import Process
 
 from insurance.entity.artifact_entity import (DataIngestionArtifact,
-                                              DataValidationArtifact)
+                                              DataValidationArtifact,
+                                              DataTransformationArtifact)
 from insurance.components.data_ingestion import DataIngestion
 from insurance.components.data_validation import DataValidation
+from insurance.components.data_transformation import DataTransformation
                         
 
 import os, sys
@@ -53,6 +55,21 @@ class Pipeline(Thread):
         except Exception as e:
             raise InsuranceException(e, sys) from e
         
+    def start_data_transformation(self,
+                                  data_ingestion_artifact: DataIngestionArtifact,
+                                  data_validation_artifact: DataValidationArtifact
+                                  ) -> DataTransformationArtifact:
+        try:
+            data_transformation = DataTransformation(
+                data_transformation_config=self.config.get_data_transformation_config(),
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact
+            )
+            return data_transformation.initiate_data_transformation()
+        except Exception as e:
+            raise InsuranceException(e, sys)
+
+        
 
 
 
@@ -60,6 +77,10 @@ class Pipeline(Thread):
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
+            data_transformation_artifact = self.start_data_transformation(
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact
+            )
 
         
 
