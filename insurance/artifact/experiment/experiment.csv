@@ -1,0 +1,2 @@
+experiment_id,initialization_timestamp,artifact_time_stamp,running_status,start_time,stop_time,execution_time,message,experiment_file_path,accuracy,is_model_accepted,created_time_stamp
+a75df874-385f-4094-99a7-ef7d30947da6,2024-04-03-18-02-51,2024-04-03-18-02-51,True,2024-04-03 18:02:51.101178,,,Pipeline has been started.,experiment.csv,,,2024-04-03 18:02:51.116173
